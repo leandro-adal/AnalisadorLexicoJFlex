@@ -11,8 +11,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class TesteAnalisadorLexico {
 	public static void main(String[] args) throws IOException {
-		//String expr = "if 2+3+a them * 1 ";
-		//String expr1 = "'Ola Mundo' +  6.0 % # @ !  ; .";
+		
 		while (true) {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Escolha a entrada:");
@@ -28,15 +27,15 @@ public class TesteAnalisadorLexico {
 				System.out.printf("Digite um trecho de codigo: ");
 				String b = sc1.nextLine();
 				AnalisadorLexico lexico = new AnalisadorLexico(new StringReader(b));
-				System.out.println(String.format("%-25s", "Lexema")+ "Descrição\n");
+				System.out.println(String.format("%-25s", "Lexema")+ "DescriÃ§Ã£o\n");
 				lexico.yylex();
 				System.out.println("");
 			} else if (a == 2) {
-				String path = "C:\\Users\\leand\\OneDrive\\Documentos\\Faculdade\\Programar\\Java\\Projeto\\Projeto1\\src\\main\\";
+				String path = "caminho do arquivo para teste";
 				String arquivo = path + "teste";
 				File file = new File(arquivo);
 				AnalisadorLexico lexico2 = new AnalisadorLexico(new FileReader(file));
-				System.out.println(String.format("%-25s", "Lexema")+ "Descrição\n");
+				System.out.println(String.format("%-25s", "Lexema")+ "DescriÃ§Ã£o\n");
 				lexico2.yylex();
 				System.out.println("");
 			} else if (a == 3) {
@@ -50,32 +49,22 @@ public class TesteAnalisadorLexico {
 				
 				int retorno = file1.showOpenDialog(null);
 				if (retorno == JFileChooser.APPROVE_OPTION) {
-					//file1.setFileSelectionMode(JFileChooser.FILES_ONLY);
-					//file1.showSaveDialog(null);
+
 					AnalisadorLexico lexico3 = new AnalisadorLexico(new FileReader(file1.getSelectedFile().getAbsolutePath()));
-					System.out.println(String.format("%-25s", "Lexema")+ "Descrição\n");
+					System.out.println(String.format("%-25s", "Lexema")+ "DescriÃ§Ã£o\n");
 					lexico3.yylex();
 					System.out.println("");
 				}
 			} else if (a == -1) {
 				System.out.println("Encerrando aplicativo...");
 				break;
-			//JFileChooser file1 = new JFileChooser();
-			//file1.setFileSelectionMode(JFileChooser.FILES_ONLY);
-			//file1.showSaveDialog(null);
+;
 			} else {
-				System.out.println("Vc digitou um caractere errado! Por favor, digite uma das opções disponiveis");
+				System.out.println("Vc digitou um caractere errado! Por favor, digite uma das opÃ§Ãµes disponiveis");
 			}
 		}
 
-		//AnalisadorLexico lexico3 = new AnalisadorLexico(new FileReader(file1.getSelectedFile().getAbsolutePath()));
-		//AnalisadorLexico lexico3 = new AnalisadorLexico(new FileReader(file));
-		//AnalisadorLexico lexico = new AnalisadorLexico(new StringReader(expr));
 
-		//AnalisadorLexico lexico1 = new AnalisadorLexico(new StringReader(expr1));
-		//lexico.yylex();
-		//lexico1.yylex();
-		//lexico3.yylex();
 	}
 
 }
