@@ -5,7 +5,7 @@ import java.io.File;
 public class Gerador {
 
 	public static void main(String[] args) {
-		String path = "C:\\Users\\leand\\OneDrive\\Documentos\\Faculdade\\Programar\\Java\\Projeto\\Projeto1\\src\\main\\";
+		String path = "caminho da pasta";
 		String arquivo = path + "linguagem.flex";
 		
 		File file = new File(arquivo);
